@@ -1,0 +1,36 @@
+{
+  "name": "ptero",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": "git@github.com:pine/ptero.git",
+  "author": {
+    "name": "Pine Mizune",
+    "email": "pinemz@gmail.com",
+    "url": "https://github.com/pine"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/cuid": "^0.0.30",
+    "@types/mocha": "^2.2.38",
+    "@types/sinon": "^1.16.34",
+    "chai": "^3.5.0",
+    "cuid": "^1.3.8",
+    "imports-loader": "^0.7.0",
+    "karma": "^1.4.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^2.0.2",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "^1.14.0"
+  }
+}
