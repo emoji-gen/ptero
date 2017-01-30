@@ -4,6 +4,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
+    "prepublish": "tsc",
     "build": "tsc",
     "test": "karma start --single-run"
   },
