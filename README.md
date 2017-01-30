@@ -2,7 +2,12 @@
 
 :deciduous_tree: Simple CustomEvent listener and emitter
 
-## Usage
+## Getting started
+
+```
+$ npm install ptero --save # for npm users
+$ yarn add ptero           # for yarn users
+```
 
 ```js
 const {Presto} = require('presto')
