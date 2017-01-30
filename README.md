@@ -84,7 +84,7 @@ presto.off(['eventname2', 'eventname3'], listener)
 ```
 
 ### `presto.emit(event, detail)`
-dispatch a single custom event.
+Dispatch a single custom event.
 
 ```js
 presto.emit('eventname', { foo: 1 })
