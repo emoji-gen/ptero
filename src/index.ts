@@ -49,7 +49,7 @@ export class Ptero {
 
             // for IE 9 ~ 11
             catch (e) {
-                customEvent = <CustomEvent>(document.createEvent(event))
+                customEvent = document.createEvent('CustomEvent')
                 customEvent.initCustomEvent(event, false, false, detail)
             }
 
