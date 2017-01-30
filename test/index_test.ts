@@ -6,13 +6,31 @@ import * as sinon from 'sinon'
 import {Ptero} from '../src/index'
 import {makeEventName} from './test_helpers'
 
-const ptero = new Ptero(window)
+
+describe('init', () => {
+    it('should be initialized without arguments', () => {
+        const ptero = new Ptero()
+        assert.equal(ptero.target, window)
+    })
+
+    it('should be initialized with window', () => {
+        const ptero = new Ptero(window)
+        assert.equal(ptero.target, window)
+    })
+
+    it('should be initialized with document.body', () => {
+        const ptero = new Ptero(document.body)
+        assert.equal(ptero.target, document.body)
+    })
+})
 
 
 describe('addListener', () => {
+    let ptero: Ptero
     let eventName: string
 
     beforeEach(() => {
+        ptero     = new Ptero()
         eventName = makeEventName()
     })
 
@@ -35,10 +53,12 @@ describe('addListener', () => {
 
 
 describe('on', () => {
+    let ptero: Ptero
     let eventName: string
     let eventName2: string
 
     beforeEach(() => {
+        ptero      = new Ptero()
         eventName  = makeEventName()
         eventName2 = makeEventName()
 
@@ -82,9 +102,11 @@ describe('on', () => {
 
 
 describe('removeListener', () => {
+    let ptero: Ptero
     let eventName: string
 
     beforeEach(() => {
+        ptero     = new Ptero()
         eventName = makeEventName()
     })
 
@@ -105,10 +127,12 @@ describe('removeListener', () => {
 
 
 describe('off', () => {
+    let ptero: Ptero
     let eventName: string
     let eventName2: string
 
     beforeEach(() => {
+        ptero      = new Ptero()
         eventName  = makeEventName()
         eventName2 = makeEventName()
     })
@@ -147,10 +171,12 @@ describe('off', () => {
 
 
 describe('emit', () => {
+    let ptero: Ptero
     let eventName: string
     let eventName2: string
 
     beforeEach(() => {
+        ptero      = new Ptero(document.body)
         eventName  = makeEventName()
         eventName2 = makeEventName()
     })
