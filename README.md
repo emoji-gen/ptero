@@ -101,4 +101,4 @@ $ yarn test      # run tests
 ```
 
 ## License
-MIT @ [Pine Mizune](https://github.com/pine)
+MIT @ [Emoji Generator](https://emoji.pine.moe)
