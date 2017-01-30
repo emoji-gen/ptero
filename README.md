@@ -97,7 +97,7 @@ $ yarn
 
 $ yarn start     # for development
 $ yarn run build # for production
-$ yarn     test  # run tests
+$ yarn test      # run tests
 ```
 
 ## License
