@@ -15,5 +15,15 @@ presto.on('eventname', e => {
 presto.emit('eventname', { foo: 1 })
 ```
 
+## Development
+
+```
+$ yarn
+
+$ yarn start     # for development
+$ yarn run build # for production
+$ yarn run test  # run tests
+```
+
 ## License
 MIT @ [Pine Mizune](https://github.com/pine)

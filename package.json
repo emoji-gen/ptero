@@ -6,6 +6,7 @@
   "scripts": {
     "prepublish": "tsc",
     "build": "tsc",
+    "start": "tsc --watch",
     "test": "karma start --single-run"
   },
   "repository": "git@github.com:pine/ptero.git",
