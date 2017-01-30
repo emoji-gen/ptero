@@ -10,53 +10,53 @@ $ yarn add ptero           # for yarn users
 ```
 
 ```js
-const {Presto} = require('presto')
-const presto = new Presto()
+const {Ptero} = require('ptero')
+const ptero = new Ptero()
 
-presto.on('eventname', e => {
+ptero.on('eventname', e => {
     console.log(e.detail) // => { foo: 1 }
 })
 
-presto.emit('eventname', { foo: 1 })
+ptero.emit('eventname', { foo: 1 })
 ```
 
 ## References
-### `new Presto(target)`
-Create new `Presto` instance.
+### `new Ptero(target)`
+Create new `Ptero` instance.
 
 ```js
 // Default target is `window`
-const presto = new Presto()
+const ptero = new Ptero()
 ```
 
 ```js
 // Set `document.body` for an event target
-const presto = new Presto(document.body)
+const ptero = new Ptero(document.body)
 ```
 
-### `presto.addListener(event, listener)`
+### `ptero.addListener(event, listener)`
 Listen a single custom event.
 
 ```js
-presto.addListener('eventname', e => {
+ptero.addListener('eventname', e => {
     console.log(e.detail)
 })
 ```
 
-### `presto.on(event, listener)`
+### `ptero.on(event, listener)`
 Listen a single custom event or multi custom events.
 
 ```js
-presto.on('eventname', e => {
+ptero.on('eventname', e => {
     console.log(e.detail)
 })
 
-presto.on(['eventname1', 'eventname2'], e => {
+ptero.on(['eventname1', 'eventname2'], e => {
     console.log(e.detail)
 })
 ```
 
-### `presto.removeListener(event, listener)`
+### `ptero.removeListener(event, listener)`
 Stop listening a single custom event.
 
 ```js
@@ -64,11 +64,11 @@ const listener = e => {
     console.log(e.detail)
 }
 
-presto.addListener('eventname', listener)
-presto.removeListener('eventname', listener)
+ptero.addListener('eventname', listener)
+ptero.removeListener('eventname', listener)
 ```
 
-### `presto.off(event, listener)`
+### `ptero.off(event, listener)`
 Stop listening a single custom event or multi custom events.
 
 ```js
@@ -76,18 +76,18 @@ const listener = e => {
     console.log(e.detail)
 }
 
-presto.on('eventname1', listener)
-presto.on(['eventname2', 'eventname3'], listener)
+ptero.on('eventname1', listener)
+ptero.on(['eventname2', 'eventname3'], listener)
 
-presto.off('eventname1', listener)
-presto.off(['eventname2', 'eventname3'], listener)
+ptero.off('eventname1', listener)
+ptero.off(['eventname2', 'eventname3'], listener)
 ```
 
-### `presto.emit(event, detail)`
+### `ptero.emit(event, detail)`
 Dispatch a single custom event.
 
 ```js
-presto.emit('eventname', { foo: 1 })
+ptero.emit('eventname', { foo: 1 })
 ```
 
 ## Development
