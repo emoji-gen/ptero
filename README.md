@@ -21,7 +21,21 @@ presto.emit('eventname', { foo: 1 })
 ```
 
 ## References
+### `new Presto(target)`
+Create new `Presto` instance.
+
+```js
+// Default target is `window`
+const presto = new Presto()
+```
+
+```js
+// Set `document.body` for an event target
+const presto = new Presto(document.body)
+```
+
 ### `presto.addListener(event, listener)`
+Listen a single custom event.
 
 ```js
 presto.addListener('eventname', e => {
@@ -30,6 +44,7 @@ presto.addListener('eventname', e => {
 ```
 
 ### `presto.on(event, listener)`
+Listen a single custom event or multi custom events.
 
 ```js
 presto.on('eventname', e => {
@@ -42,6 +57,7 @@ presto.on(['eventname1', 'eventname2'], e => {
 ```
 
 ### `presto.removeListener(event, listener)`
+Stop listening a single custom event.
 
 ```js
 const listener = e => {
@@ -53,6 +69,7 @@ presto.removeListener('eventname', listener)
 ```
 
 ### `presto.off(event, listener)`
+Stop listening a single custom event or multi custom events.
 
 ```js
 const listener = e => {
@@ -67,6 +84,7 @@ presto.off(['eventname2', 'eventname3'], listener)
 ```
 
 ### `presto.emit(event, detail)`
+dispatch a single custom event.
 
 ```js
 presto.emit('eventname', { foo: 1 })
