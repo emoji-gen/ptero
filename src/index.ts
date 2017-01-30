@@ -1,42 +1,49 @@
 'use strict'
 
-export function addListener(event: string, listener: (e: CustomEvent) => void) {
-    window.addEventListener(event, listener, false)
-}
+export type ListenerFunction = (e: CustomEvent) => void
 
-export function on(event: string|string[], listener: (e: CustomEvent) => void) {
-    if (Array.isArray(event)) {
-        event.forEach(e => { addListener(e, listener) })
-    } else {
-        addListener(event, listener)
+export class Ptero {
+    target: EventTarget;
+
+    constructor(target: EventTarget = window) {
+        this.target = target
     }
-}
 
-export function once(event: string, listener: (e: CustomEvent) => void) {
-    const wrapper = (e: CustomEvent) => {
-        removeEventListener(event, wrapper)
-        listener(e)
+    addListener(event: string, listener: ListenerFunction) : Ptero {
+        this.target.addEventListener(event, listener, false)
+        return this
     }
-    addEventListener(event, wrapper)
-}
 
-export function removeListener(event: string, listener: (e: CustomEvent) => void) {
-    window.removeEventListener(event, listener, false)
-}
-
-export function off(event: string|string[], listener: (e: CustomEvent) => void) {
-    if (Array.isArray(event)) {
-        event.forEach(e => { removeListener(e, listener) })
-    } else {
-        removeListener(event, listener)
+    on(event: string|string[], listener: ListenerFunction) : Ptero {
+        if (Array.isArray(event)) {
+            event.forEach(e => { this.addListener(e, listener) })
+        } else {
+            this.addListener(event, listener)
+        }
+        return this
     }
-}
 
-export function emit(event: string|string[], detail: any = null) {
-    if (Array.isArray(event)) {
-        event.forEach(e => { emit(e, detail) })
-    } else {
-        const customEvent = new CustomEvent(event, { detail })
-        window.dispatchEvent(customEvent)
+    removeListener(event: string, listener: ListenerFunction) : Ptero {
+        this.target.removeEventListener(event, listener, false)
+        return this
+    }
+
+    off(event: string|string[], listener: (e: CustomEvent) => void) {
+        if (Array.isArray(event)) {
+            event.forEach(e => { this.removeListener(e, listener) })
+        } else {
+            this.removeListener(event, listener)
+        }
+        return this
+    }
+
+    emit(event: string|string[], detail: any = null) : Ptero {
+        if (Array.isArray(event)) {
+            event.forEach(e => { this.emit(e, detail) })
+        } else {
+            const customEvent = new CustomEvent(event, { detail })
+            this.target.dispatchEvent(customEvent)
+        }
+        return this
     }
 }

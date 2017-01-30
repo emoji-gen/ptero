@@ -4,7 +4,6 @@ module.exports = function(config) {
   config.set({
     basePath: '',
     frameworks: ['mocha'],
-
     browsers: ['PhantomJS'],
 
     files: [
@@ -45,7 +44,7 @@ module.exports = function(config) {
       noInfo: true
     },
 
-    reporters: ['mocha'],
+    reporters: ['mocha', 'growl'],
 
     port: 9876,
     colors: true,

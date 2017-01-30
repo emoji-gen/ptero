@@ -3,8 +3,10 @@
 import {assert} from 'chai'
 import * as sinon from 'sinon'
 
-import * as ptero from '../src/index'
+import {Ptero} from '../src/index'
 import {makeEventName} from './test_helpers'
+
+const ptero = new Ptero(window)
 
 
 describe('addListener', () => {
@@ -16,8 +18,9 @@ describe('addListener', () => {
 
     it('should add event listener', () => {
         const listener = sinon.spy()
-        ptero.addListener(eventName, listener)
+        const result   = ptero.addListener(eventName, listener)
         assert.isNotOk(listener.called)
+        assert.equal(result, ptero)
 
         ptero.emit(eventName, 128)
         ptero.emit(eventName, { foo: 256 })
@@ -44,8 +47,9 @@ describe('on', () => {
 
     it('should add single event listener', () => {
         const listener = sinon.spy()
-        ptero.on(eventName, listener)
+        const result   = ptero.on(eventName, listener)
         assert.isNotOk(listener.called)
+        assert.equal(result, ptero)
 
         ptero.emit(eventName, 128)
         ptero.emit(eventName, { foo: 256 })
@@ -59,8 +63,9 @@ describe('on', () => {
 
     it('should add multi event listener', () => {
         const listener = sinon.spy()
-        ptero.on([ eventName, eventName2 ], listener)
+        const result   = ptero.on([ eventName, eventName2 ], listener)
         assert.isNotOk(listener.called)
+        assert.equal(result, ptero)
 
         ptero.emit(eventName, 128)
         ptero.emit(eventName, { foo: 256 })
@@ -75,4 +80,106 @@ describe('on', () => {
     })
 })
 
+
+describe('removeListener', () => {
+    let eventName: string
+
+    beforeEach(() => {
+        eventName = makeEventName()
+    })
+
+    it('should remove listener', () => {
+        const listener = sinon.spy()
+        ptero.on(eventName, listener)
+        assert.isNotOk(listener.called)
+
+        ptero.emit(eventName)
+        assert.isOk(listener.calledOnce)
+
+        const result = ptero.removeListener(eventName, listener)
+        ptero.emit(eventName)
+        assert.isOk(listener.calledOnce)
+        assert.equal(result, ptero)
+    })
+})
+
+
+describe('off', () => {
+    let eventName: string
+    let eventName2: string
+
+    beforeEach(() => {
+        eventName  = makeEventName()
+        eventName2 = makeEventName()
+    })
+
+    it('should remove single event listener', () => {
+        const listener = sinon.spy()
+        ptero.on(eventName, listener)
+        assert.isNotOk(listener.called)
+
+        ptero.emit(eventName)
+        assert.isOk(listener.calledOnce)
+
+        const result = ptero.off(eventName, listener)
+        ptero.emit(eventName)
+        assert.isOk(listener.calledOnce)
+        assert.equal(result, ptero)
+    })
+
+    it('should remove multi event listener', () => {
+        const listener = sinon.spy()
+        ptero.on(eventName, listener)
+        ptero.on(eventName2, listener)
+        assert.isNotOk(listener.called)
+
+        ptero.emit(eventName)
+        ptero.emit(eventName2)
+        assert.isOk(listener.calledTwice)
+
+        const result = ptero.off([ eventName, eventName2 ], listener)
+        ptero.emit(eventName)
+        ptero.emit(eventName2)
+        assert.isOk(listener.calledTwice)
+        assert.equal(result, ptero)
+    })
+})
+
+
+describe('emit', () => {
+    let eventName: string
+    let eventName2: string
+
+    beforeEach(() => {
+        eventName  = makeEventName()
+        eventName2 = makeEventName()
+    })
+
+    it('should emit a single event', () => {
+        const listener = sinon.spy()
+        ptero.on([ eventName, eventName2 ], listener)
+        assert.isNotOk(listener.called)
+
+        ptero.emit(eventName, 128)
+        ptero.emit(eventName2, { foo: 256 })
+        assert.isOk(listener.calledTwice)
+
+        const customEvents = <CustomEvent[][]>(listener.args)
+        assert.deepEqual(customEvents[0][0].detail, 128)
+        assert.deepEqual(customEvents[1][0].detail, { foo: 256 })
+    })
+
+    it('should emit multi events', () => {
+        const listener = sinon.spy()
+        ptero.on([ eventName, eventName2 ], listener)
+        assert.isNotOk(listener.called)
+
+        ptero.emit([ eventName, eventName2 ], 128)
+        assert.isOk(listener.calledTwice)
+
+        const customEvents = <CustomEvent[][]>(listener.args)
+        assert.deepEqual(customEvents[0][0].detail, 128)
+        assert.deepEqual(customEvents[1][0].detail, 128)
+    })
+})
 

@@ -4,7 +4,8 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "karma start --single-run"
   },
   "repository": "git@github.com:pine/ptero.git",
   "author": {
@@ -23,6 +24,7 @@
     "cuid": "^1.3.8",
     "imports-loader": "^0.7.0",
     "karma": "^1.4.0",
+    "karma-growl-reporter": "^1.0.0",
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
