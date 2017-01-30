@@ -41,7 +41,18 @@ export class Ptero {
         if (Array.isArray(event)) {
             event.forEach(e => { this.emit(e, detail) })
         } else {
-            const customEvent = new CustomEvent(event, { detail })
+            let customEvent: CustomEvent
+
+            try {
+                customEvent = new CustomEvent(event, { detail })
+            }
+
+            // for IE 9 ~ 11
+            catch (e) {
+                customEvent = <CustomEvent>(document.createEvent(event))
+                customEvent.initCustomEvent(event, false, false, detail)
+            }
+
             this.target.dispatchEvent(customEvent)
         }
         return this
