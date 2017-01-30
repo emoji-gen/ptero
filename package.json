@@ -9,13 +9,6 @@
     "start": "tsc --watch",
     "test": "karma start --single-run"
   },
-  "repository": "git@github.com:pine/ptero.git",
-  "author": {
-    "name": "Pine Mizune",
-    "email": "pinemz@gmail.com",
-    "url": "https://github.com/pine"
-  },
-  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^3.4.34",
@@ -36,5 +29,19 @@
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.5",
     "webpack": "^1.14.0"
-  }
+  },
+  "author": {
+    "name": "Pine Mizune",
+    "email": "pinemz@gmail.com",
+    "url": "https://github.com/pine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emoji-gen/ptero"
+  },
+  "bugs": {
+    "url": "https://github.com/emoji-gen/ptero/issues"
+  },
+  "homepage": "https://github.com/emoji-gen/ptero",
+  "license": "MIT"
 }
