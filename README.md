@@ -20,6 +20,58 @@ presto.on('eventname', e => {
 presto.emit('eventname', { foo: 1 })
 ```
 
+## References
+### `presto.addListener(event, listener)`
+
+```js
+presto.addListener('eventname', e => {
+    console.log(e.detail)
+})
+```
+
+### `presto.on(event, listener)`
+
+```js
+presto.on('eventname', e => {
+    console.log(e.detail)
+})
+
+presto.on(['eventname1', 'eventname2'], e => {
+    console.log(e.detail)
+})
+```
+
+### `presto.removeListener(event, listener)`
+
+```js
+const listener = e => {
+    console.log(e.detail)
+}
+
+presto.addListener('eventname', listener)
+presto.removeListener('eventname', listener)
+```
+
+### `presto.off(event, listener)`
+
+```js
+const listener = e => {
+    console.log(e.detail)
+}
+
+presto.on('eventname1', listener)
+presto.on(['eventname2', 'eventname3'], listener)
+
+presto.off('eventname1', listener)
+presto.off(['eventname2', 'eventname3'], listener)
+```
+
+### `presto.emit(event, detail)`
+
+```js
+presto.emit('eventname', { foo: 1 })
+```
+
 ## Development
 
 ```
