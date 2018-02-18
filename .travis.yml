@@ -4,6 +4,10 @@ node_js:
   - 6
   - 8
 
+script:
+  - travis_retry yarn run build
+  - travis_retry yarn test
+
 env:
   global:
     - secure: "v8ZLgoWmpeZvWT5+rYgp3R2phJyx/aDN7ew6Z4SsyGf099yyDIRbNXyYPF6nGa0m9bTcehOeuPO+z7BgEpBvQlNOTCNPF98X8ZG3VbpGtwaf0X4555iX93b0V17VwnzdMOChajNnn/gB85Lm+1xfLaAysHmGSKsFfZ9oZaSM9QvT2JMTkyve8WaX3s9m9KcKXAVMNpTKXajBY7mddty4e4tq1AxiUXHNwv31CPZBI6R9sq7W6ztGXV2TSavFmXSsQERqjbGd6zglsONs+yA9jQOw3MbM+BkQozou2ezCGxGfX43fDssBIWqEIQb7bMLlEsbl+6wQINZtrv2UmCpNkGoVO8HmUQWbDVaj7IG5Q46gmXDPYQBxNzz1N55Xmb4oLbs8fBe7AHf779CG4FMDk+OqsYtJuSzfrZiomrshynSNNgAQNQtjcXL3Jzptz7JKCd1Su/f8AQzXy97hKOEiYc9Kb+xZN1rRjrrGM/JTDKHe8x8VC2kSvWFtWR/XqxmK3K5xB+01V4WrqRduoGcDHcxYZEmkxTX+JF0hcAdFz7nSxqiUGW9QrbLg85GWY3mUYOFc2c+uOINZEvPNwcUUpWKYI+oSasJD24nrOk0GlB89waoAyZkUmtPwo7+7KK/gxD2cMNiiS4eqfg/LQYyGlDeJNuzOWJd5HPxi4uZTlqM="
