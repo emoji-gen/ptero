@@ -79,8 +79,7 @@ module.exports = function(config) {
 
     webpack: {
       resolve: {
-        extensions: ['', '.ts', '.tsx', '.js', '.json'],
-        modulesDirectories: ['node_modules'],
+        extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
           'sinon': 'sinon/pkg/sinon',
         },
@@ -92,14 +91,11 @@ module.exports = function(config) {
         loaders: [
           {
             test: /sinon.*\.js$/,
-            loader: 'imports?define=>false,require=>false',
+            loader: 'imports-loader?define=>false,require=>false',
           },
-          { test: /\.tsx?$/, loader: 'ts' },
-          { test: /\.json$/, loader: 'json' },
+          { test: /\.tsx?$/, loader: 'ts-loader' },
+          { test: /\.json$/, loader: 'json-loader' },
         ],
-      },
-      browsers: {
-        fs: false,
       },
     },
     webpackMiddleware: {
