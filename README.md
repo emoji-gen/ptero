@@ -101,4 +101,4 @@ $ yarn test      # run tests
 ```
 
 ## License
-MIT &copy; [Emoji Generator](https://emoji.pine.moe)
+MIT &copy; [Emoji Generator](https://emoji-gen.ninja/)
