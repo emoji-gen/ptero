@@ -1,4 +1,8 @@
-# ptero &nbsp;[![npm](https://img.shields.io/npm/v/ptero.svg?maxAge=2592000&style=shield)](https://www.npmjs.org/package/ptero) [![Build Status](https://travis-ci.org/emoji-gen/ptero.svg?branch=master)](https://travis-ci.org/emoji-gen/ptero) [![dependencies Status](https://david-dm.org/emoji-gen/ptero/status.svg)](https://david-dm.org/emoji-gen/ptero) [![devDependencies Status](https://david-dm.org/emoji-gen/ptero/dev-status.svg)](https://david-dm.org/emoji-gen/ptero?type=dev)
+## ptero
+[![npm](https://img.shields.io/npm/v/ptero.svg?maxAge=2592000&style=shield)](https://www.npmjs.org/package/ptero)
+[![Build Status](https://travis-ci.org/emoji-gen/ptero.svg?branch=master)](https://travis-ci.org/emoji-gen/ptero)
+[![dependencies Status](https://david-dm.org/emoji-gen/ptero/status.svg)](https://david-dm.org/emoji-gen/ptero)
+[![devDependencies Status](https://david-dm.org/emoji-gen/ptero/dev-status.svg)](https://david-dm.org/emoji-gen/ptero?type=dev)
 
 :deciduous_tree: Simple CustomEvent listener and emitter
 
