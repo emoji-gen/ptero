@@ -72,6 +72,7 @@ module.exports = function(config) {
     },
 
     webpack: {
+      mode: 'development',
       resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
@@ -82,7 +83,7 @@ module.exports = function(config) {
         noParse: [
           /sinon/,
         ],
-        loaders: [
+        rules: [
           {
             test: /sinon.*\.js$/,
             loader: 'imports-loader?define=>false,require=>false',
