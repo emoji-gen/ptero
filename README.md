@@ -8,7 +8,7 @@
 
 ## Getting started
 
-```
+```bash
 $ npm install ptero --save # for npm users
 $ yarn add ptero           # for yarn users
 ```
