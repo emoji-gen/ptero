@@ -97,9 +97,7 @@ ptero.emit('eventname', { foo: 1 })
 
 ## Development
 
-```
-$ yarn
-
+```bash
 $ yarn start     # for development
 $ yarn run build # for production
 $ yarn test      # run tests
