@@ -4,6 +4,7 @@
 [![dependencies Status](https://david-dm.org/emoji-gen/ptero/status.svg)](https://david-dm.org/emoji-gen/ptero)
 [![devDependencies Status](https://david-dm.org/emoji-gen/ptero/dev-status.svg)](https://david-dm.org/emoji-gen/ptero?type=dev)
 [![Greenkeeper badge](https://badges.greenkeeper.io/emoji-gen/ptero.svg)](https://greenkeeper.io/)
+[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](https://opensource.org/licenses/MIT)
 
 :deciduous_tree: Simple CustomEvent listener and emitter
 
