@@ -16,7 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.2",
-    "@types/mocha": "^5.2.5",
+    "@types/mocha": "^7.0.0",
     "@types/sinon": "^7.0.13",
     "chai": "^4.1.2",
     "cuid": "^2.1.0",
