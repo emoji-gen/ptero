@@ -31,7 +31,7 @@
     "sinon": "^8.0.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.2.1",
-    "webpack": "^4.27.0"
+    "webpack": "^4.43.0"
   },
   "author": {
     "name": "Pine Mizune",
