@@ -8,7 +8,7 @@
     "*.md"
   ],
   "scripts": {
-    "prepublish": "tsc",
+    "prepare": "tsc",
     "build": "tsc",
     "start": "tsc --watch",
     "test": "karma start --single-run"
