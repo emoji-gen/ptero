@@ -1,5 +1,6 @@
 ## ptero
 [![npm](https://img.shields.io/npm/v/ptero.svg?maxAge=2592000&style=shield)](https://www.npmjs.org/package/ptero)
+[![build](https://github.com/emoji-gen/ptero/actions/workflows/build.yml/badge.svg)](https://github.com/emoji-gen/ptero/actions/workflows/build.yml)
 [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](https://opensource.org/licenses/MIT)
 
 :deciduous_tree: Simple CustomEvent listener and emitter
