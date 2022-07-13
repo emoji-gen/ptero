@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
-    "@types/sinon": "^7.0.13",
+    "@types/sinon": "^10.0.12",
     "chai": "^4.3.6",
     "cuid": "^2.1.0",
     "imports-loader": "^0.8.0",
@@ -28,7 +28,7 @@
     "karma-mocha-reporter": "^2.2.2",
     "karma-webpack": "4.0.2",
     "mocha": "^10.0.0",
-    "sinon": "^8.0.0",
+    "sinon": "^14.0.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.2.1",
     "webpack": "^4.27.0"
