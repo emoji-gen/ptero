@@ -46,7 +46,7 @@ module.exports = config => {
       noInfo: true
     },
 
-    reporters: ['mocha', 'growl'],
+    reporters: ['mocha'],
 
     port: 9876,
     colors: true,
