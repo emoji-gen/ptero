@@ -1,6 +1,5 @@
-'use strict'
-
 export type ListenerFunction = (e: CustomEvent) => void
+export type EventListener = (e: CustomEvent) => void
 
 export class Ptero {
   target: EventTarget;
@@ -9,7 +8,8 @@ export class Ptero {
     this.target = target
   }
 
-  addListener(event: string, listener: ListenerFunction) : Ptero {
+  addListener(event: string, listener: EventListener) : Ptero {
+    // @ts-ignore
     this.target.addEventListener(event, listener, false)
     return this
   }
@@ -24,7 +24,7 @@ export class Ptero {
   }
 
   removeListener(event: string, listener: ListenerFunction) : Ptero {
-    this.target.removeEventListener(event, listener, false)
+    // this.target.removeEventListener(event, listener, false)
     return this
   }
 
