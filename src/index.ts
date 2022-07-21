@@ -1,4 +1,3 @@
-export type ListenerFunction = (e: CustomEvent) => void
 export type EventListener = (e: CustomEvent) => void
 
 export class Ptero {
@@ -9,12 +8,11 @@ export class Ptero {
   }
 
   addListener(event: string, listener: EventListener) : Ptero {
-    // @ts-ignore
-    this.target.addEventListener(event, listener, false)
+    this.target.addEventListener(event, listener as EventListenerOrEventListenerObject, false)
     return this
   }
 
-  on(event: string|string[], listener: ListenerFunction) : Ptero {
+  on(event: string|string[], listener: EventListener) : Ptero {
     if (Array.isArray(event)) {
       event.forEach(e => { this.addListener(e, listener) })
     } else {
@@ -23,12 +21,12 @@ export class Ptero {
     return this
   }
 
-  removeListener(event: string, listener: ListenerFunction) : Ptero {
-    // this.target.removeEventListener(event, listener, false)
+  removeListener(event: string, listener: EventListener) : Ptero {
+    this.target.removeEventListener(event, listener as EventListenerOrEventListenerObject, false)
     return this
   }
 
-  off(event: string|string[], listener: (e: CustomEvent) => void) {
+  off(event: string|string[], listener: EventListener) {
     if (Array.isArray(event)) {
       event.forEach(e => { this.removeListener(e, listener) })
     } else {

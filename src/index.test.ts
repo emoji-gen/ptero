@@ -1,6 +1,5 @@
 import { jest } from '@jest/globals'
 import cuid from 'cuid'
-
 import { Ptero } from './index'
 
 describe('init', () => {
