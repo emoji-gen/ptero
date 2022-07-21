@@ -1,19 +1,23 @@
 {
   "name": "ptero",
   "version": "0.2.4",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "lib",
-    "*.md"
-  ],
+  "description": "Simple CustomEvent listener and emitter",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "test": "jest",
     "build": "tsup src/index.ts --dts --format esm,cjs --target es5",
     "clean": "rimraf dist",
     "prepare": "run-s clean build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@swc/core": "^1.2.218",
     "@types/jest": "^28.1.6",
@@ -40,5 +44,8 @@
     "url": "https://github.com/emoji-gen/ptero/issues"
   },
   "homepage": "https://github.com/emoji-gen/ptero",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
