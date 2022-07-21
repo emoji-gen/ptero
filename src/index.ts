@@ -7,12 +7,12 @@ export class Ptero {
     this.target = target
   }
 
-  addListener(event: string, listener: EventListener) : Ptero {
+  addListener(event: string, listener: EventListener) : this {
     this.target.addEventListener(event, listener as EventListenerOrEventListenerObject, false)
     return this
   }
 
-  on(event: string|string[], listener: EventListener) : Ptero {
+  on(event: string|string[], listener: EventListener) : this {
     if (Array.isArray(event)) {
       event.forEach(e => { this.addListener(e, listener) })
     } else {
@@ -21,12 +21,12 @@ export class Ptero {
     return this
   }
 
-  removeListener(event: string, listener: EventListener) : Ptero {
+  removeListener(event: string, listener: EventListener) : this {
     this.target.removeEventListener(event, listener as EventListenerOrEventListenerObject, false)
     return this
   }
 
-  off(event: string|string[], listener: EventListener) {
+  off(event: string|string[], listener: EventListener) : this {
     if (Array.isArray(event)) {
       event.forEach(e => { this.removeListener(e, listener) })
     } else {
@@ -35,7 +35,7 @@ export class Ptero {
     return this
   }
 
-  emit(event: string|string[], detail: any = null) : Ptero {
+  emit(event: string|string[], detail: any = null) : this {
     if (Array.isArray(event)) {
       event.forEach(e => { this.emit(e, detail) })
     } else {
