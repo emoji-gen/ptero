@@ -1,5 +1,5 @@
 {
-  "name": "ptero",
+  "name": "@emoji-gen/ptero",
   "version": "0.2.4",
   "description": "Simple CustomEvent listener and emitter",
   "main": "dist/index.js",
