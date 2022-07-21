@@ -13,7 +13,8 @@ $ yarn add ptero           # for yarn users
 ```
 
 ```js
-const {Ptero} = require('ptero')
+import { Ptero } from '@emoji-gen/ptero'
+
 const ptero = new Ptero()
 
 ptero.on('eventname', e => {
