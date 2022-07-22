@@ -3,7 +3,7 @@
  */
 
 import { jest } from '@jest/globals'
-import { nanoid } from 'nanoid'
+import { v4 as uuidv4 } from 'uuid'
 import { Ptero } from './index'
 
 describe('init', () => {
@@ -29,7 +29,7 @@ describe('addListener', () => {
 
   beforeEach(() => {
     ptero = new Ptero()
-    eventName = nanoid()
+    eventName = uuidv4()
   })
 
   test('should add event listener', () => {
@@ -55,8 +55,8 @@ describe('on', () => {
 
   beforeEach(() => {
     ptero = new Ptero()
-    eventName = nanoid()
-    eventName2 = nanoid()
+    eventName = uuidv4()
+    eventName2 = uuidv4()
 
     expect(eventName).not.toBe(eventName2)
   })
@@ -100,7 +100,7 @@ describe('removeListener', () => {
 
   beforeEach(() => {
     ptero = new Ptero()
-    eventName = nanoid()
+    eventName = uuidv4()
   })
 
   test('should remove listener', () => {
@@ -125,8 +125,8 @@ describe('off', () => {
 
   beforeEach(() => {
     ptero = new Ptero()
-    eventName = nanoid()
-    eventName2 = nanoid()
+    eventName = uuidv4()
+    eventName2 = uuidv4()
   })
 
   test('should remove single event listener', () => {
@@ -169,8 +169,8 @@ describe('emit', () => {
 
   beforeEach(() => {
     ptero = new Ptero(document.body)
-    eventName = nanoid()
-    eventName2 = nanoid()
+    eventName = uuidv4()
+    eventName2 = uuidv4()
   })
 
   test('should emit a single event', () => {

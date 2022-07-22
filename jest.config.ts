@@ -2,16 +2,9 @@ import type { Config } from '@jest/types'
 
 const config: Config.InitialOptions = {
   moduleNameMapper: {
-    '^nanoid$': '<rootDir>/node_modules/nanoid/index.js',
+    '^uuid': '<rootDir>/node_modules/uuid/dist/index.js',
   },
   preset: 'ts-jest',
-  transform: {
-    '\\.js$': 'babel-jest',
-  },
-  transformIgnorePatterns: [
-    '/node_modules/(?!nanoid/)',
-    '\\.pnp\\.[^\\\/]+$',
-  ],
   verbose: true,
 }
 
