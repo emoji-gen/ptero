@@ -18,7 +18,7 @@ import { Ptero } from '@emoji-gen/ptero'
 const ptero = new Ptero()
 
 ptero.on('eventname', e => {
-    console.log(e.detail) // => { foo: 1 }
+  console.log(e.detail) // => { foo: 1 }
 })
 
 ptero.emit('eventname', { foo: 1 })
@@ -48,7 +48,7 @@ Listen a single custom event.
 
 ```js
 ptero.addListener('eventname', e => {
-    console.log(e.detail)
+  console.log(e.detail)
 })
 ```
 
@@ -57,11 +57,11 @@ Listen a single custom event or multi custom events.
 
 ```js
 ptero.on('eventname', e => {
-    console.log(e.detail)
+  console.log(e.detail)
 })
 
 ptero.on(['eventname1', 'eventname2'], e => {
-    console.log(e.detail)
+  console.log(e.detail)
 })
 ```
 
@@ -70,7 +70,7 @@ Stop listening a single custom event.
 
 ```js
 const listener = e => {
-    console.log(e.detail)
+  console.log(e.detail)
 }
 
 ptero.addListener('eventname', listener)
@@ -82,7 +82,7 @@ Stop listening a single custom event or multi custom events.
 
 ```js
 const listener = e => {
-    console.log(e.detail)
+  console.log(e.detail)
 }
 
 ptero.on('eventname1', listener)
