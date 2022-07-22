@@ -24,6 +24,11 @@ ptero.on('eventname', e => {
 ptero.emit('eventname', { foo: 1 })
 ```
 
+## Features
+
+- Supports TypeScript
+- Supports both CommonJS and ESModules
+
 ## References
 ### `new Ptero(target)`
 Create new `Ptero` instance.
