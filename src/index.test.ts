@@ -7,20 +7,20 @@ import { nanoid } from 'nanoid'
 import { Ptero } from './index'
 
 describe('init', () => {
-    test('should be initialized without arguments', () => {
-        const ptero = new Ptero()
-        expect(ptero.target).toBe(window)
-    })
+  test('should be initialized without arguments', () => {
+    const ptero = new Ptero()
+    expect(ptero.target).toBe(window)
+  })
 
-    test('should be initialized with window', () => {
-        const ptero = new Ptero(window)
-        expect(ptero.target).toBe(window)
-    })
+  test('should be initialized with window', () => {
+    const ptero = new Ptero(window)
+    expect(ptero.target).toBe(window)
+  })
 
-    test('should be initialized with document.body', () => {
-        const ptero = new Ptero(document.body)
-        expect(ptero.target).toBe(document.body)
-    })
+  test('should be initialized with document.body', () => {
+    const ptero = new Ptero(document.body)
+    expect(ptero.target).toBe(document.body)
+  })
 })
 
 describe('addListener', () => {
