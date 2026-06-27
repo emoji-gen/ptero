@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/emoji-gen/ptero"
+    "url": "git+https://github.com/emoji-gen/ptero.git"
   },
   "bugs": {
     "url": "https://github.com/emoji-gen/ptero/issues"
