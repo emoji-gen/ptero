@@ -99,12 +99,24 @@ ptero.emit('eventname', { foo: 1 })
 ```
 
 ## Development
+### Build
 
-```bash
-$ yarn start     # for development
-$ yarn run build # for production
-$ yarn test      # run tests
 ```
+$ npm run build
+```
+
+### Test
+
+```
+$ npm test
+```
+
+### Publish
+
+Update the version in `package.json` to the version you want to release.
+
+Then, manually trigger the [publish.yml](https://github.com/emoji-gen/ptero/actions/workflows/publish.yml) workflow via the `workflow_dispatch` event to create a release.
+
 
 ## License
 MIT &copy; [Emoji Generator](https://emoji-gen.ninja/)
