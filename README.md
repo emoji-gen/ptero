@@ -8,8 +8,7 @@
 ## Getting started
 
 ```bash
-$ npm install @emoji-gen/ptero --save # for npm users
-$ yarn add @emoji-gen/ptero           # for yarn users
+$ npm install @emoji-gen/ptero --save
 ```
 
 ```js
